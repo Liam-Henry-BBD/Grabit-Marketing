@@ -214,36 +214,40 @@
 
 /* ======= Responsive Design ======= */
 @media (max-width: 1024px) {
-    .card-container, #example-cards {
+
+    .card-container {
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
+        overflow-y: hidden;
         scroll-snap-type: x mandatory;
         scrollbar-width: none;
         padding-bottom: 1em;
-        padding-left: 10vw;
         justify-content: flex-start;
     }
 
-    .card-container::-webkit-scrollbar, #example-cards::-webkit-scrollbar {
+    .card-container::-webkit-scrollbar {
         display: none;
     }
 
-    .card, #example-cards .card {
-        flex: 0 0 80%;
+    .card-container .card,
+    #example-cards .card,
+    #action-cards .card {
+        flex: 0 0 auto;
+        width: 80%;
+        min-width: 280px;
         max-width: 400px;
         scroll-snap-align: center;
         margin-right: 1.5em;
     }
 
-    .card:last-child, #example-cards .card:last-child {
-        margin-right: 10%;
-    }
 }
 
 @media (max-width: 600px) {
-    .card, #example-cards .card {
-        flex: 0 0 90%;
+
+    .card-container .card {
+        width: 90%;
+        min-width: 260px;
         max-width: 350px;
         padding: 1.2em;
     }
