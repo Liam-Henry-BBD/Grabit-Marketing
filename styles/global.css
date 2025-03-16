@@ -1,3 +1,4 @@
+/* Global Reset & Defaults */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,6 +10,7 @@
     display: none;
 }
 
+/* Color Variables */
 :root {
     --bg-color: #181f1c;
     --text-color: #f0f0c9;
@@ -22,13 +24,9 @@
     --completed-task: #666666;
 }
 
-em {
-    color: var(--accent-break)
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
+    background: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
@@ -36,17 +34,16 @@ body {
     width: 100dvw;
 }
 
-
 .page {
     height: 100svh;
     width: 100dvw;
     text-align: center;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
-main>.page {
+main > .page {
     padding-top: 5em;
     margin-top: 5em;
 }
@@ -59,19 +56,11 @@ h2 {
     font-size: 45pt;
 }
 
-/* Header */
 #introduction {
     flex-direction: row;
     position: relative;
     background: linear-gradient(to bottom right, var(--accent-color) 20%, var(--bg-color) 60%);
-
 }
-
-.stack-icon {
-    width: 25%;
-    place-self: center;
-}
-
 
 #greeting {
     display: flex;
@@ -82,9 +71,9 @@ h2 {
     max-width: 60%;
 }
 
-#greeting+img {
-    margin: 0 auto;
-    padding: 5rem 0;
+.stack-icon {
+    width: 25%;
+    place-self: center;
 }
 
 #cta-buttons {
@@ -92,52 +81,33 @@ h2 {
     justify-content: space-around;
 }
 
-
-/* main */
-
-main>section {
-    justify-content: space-evenly;
-}
-
-
 .circle {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
     background-color: var(--accent-color);
-    border-radius: 100%;
-    width: 25%;
-    height: 25%;
-    place-content: center;
-    align-self: center;
+    border-radius: 50%;
+    width: 3em; 
+    height: 3em; 
+    text-align: center;
+    font-weight: bold;
+    color: var(--text-color);
 }
+
 
 .bg-green {
-    background-color: rgb(29, 155, 29);
+    background: rgb(29, 155, 29);
 }
 
 .bg-orange {
-    background-color: orange;
+    background: orange;
 }
 
 .bg-red {
-    background-color: red;
+    background: red;
 }
 
-#point-cards>.card {
-    border-left: 2px solid green;
-}
 
-#action-cards>.card {
-    background-color: transparent;
-    border: none;
-}
-
-#action-cards>.card>h3,
-#action-cards>.card>p {
-    border-left: 2px solid var(--accent-color);
-    border-right: 2px solid var(--accent-color);
-    background-color: var(--secondary-bg);
-    /* background: linear-gradient(to bottom right, var(--accent-color) 20%, var(--bg-color) 60%); */
-
-}
 
 @media (max-width: 1024px) {
     #introduction {
@@ -149,30 +119,25 @@ main>section {
         max-width: 100%;
     }
 
-    #greeting+img {
+    #greeting + img {
         margin: auto;
         padding: 1rem;
         max-width: 80%;
     }
 
-    #cta-buttons {
-        display: flex;
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
     }
 
     .page {
         height: fit-content;
     }
-    h1{
-        font-size: 2.5rem;
-    }
-    h2{
-        font-size: 1.5rem;
-    }
 }
 
-/* dashboards */
-
 #examples {
-    /* height: auto; */
-    background-color: var(--light-bg);
+    background: var(--light-bg);
 }
