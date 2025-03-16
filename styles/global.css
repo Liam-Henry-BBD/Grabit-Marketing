@@ -1,4 +1,3 @@
-/* Global Reset & Defaults */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,7 +9,6 @@
     display: none;
 }
 
-/* Color Variables */
 :root {
     --bg-color: #181f1c;
     --text-color: #f0f0c9;
@@ -39,11 +37,13 @@ body {
     width: 100dvw;
     text-align: center;
     display: flex;
+    place-content: center;
+    gap: 1rem;
     flex-direction: column;
     overflow: hidden;
 }
 
-main > .page {
+main>.page {
     padding-top: 5em;
     margin-top: 5em;
 }
@@ -54,6 +54,12 @@ h1 {
 
 h2 {
     font-size: 45pt;
+
+}
+
+.page>h2,
+.page>h3 {
+    margin-bottom: 2rem;
 }
 
 #introduction {
@@ -70,6 +76,10 @@ h2 {
     gap: 1rem;
     max-width: 60%;
 }
+#greeting+img {
+    max-height: 80%;
+    place-self: center;
+}
 
 .stack-icon {
     width: 25%;
@@ -82,13 +92,13 @@ h2 {
 }
 
 .circle {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--accent-color);
     border-radius: 50%;
-    width: 3em; 
-    height: 3em; 
+    width: 3em;
+    height: 3em;
     text-align: center;
     font-weight: bold;
     color: var(--text-color);
@@ -119,10 +129,9 @@ h2 {
         max-width: 100%;
     }
 
-    #greeting + img {
-        margin: auto;
-        padding: 1rem;
+    #greeting+img {
         max-width: 80%;
+        max-height: 50%;
     }
 
     h1 {
@@ -140,4 +149,8 @@ h2 {
 
 #examples {
     background: var(--light-bg);
+}
+
+#Waitlist {
+    margin: auto;
 }
