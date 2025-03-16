@@ -1,0 +1,210 @@
+.card-container {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    width: 20em;
+    min-height: 15em;
+    background: linear-gradient(135deg, var(--secondary-bg) 10%, var(--accent-color));
+    border-radius: 0.8em;
+    border-left: 2px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: inherit;
+    transform: scaleY(-1);
+    border-radius: 0.8em;
+    opacity: 0.15;
+    filter: blur(6px);
+    mask-image: linear-gradient(to bottom, rgba(24, 31, 28, 0.3) 10%, transparent);
+}
+
+.card:hover {
+    transform: translateY(-0.75em);
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1024px) {
+    .card-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden; /* Prevents vertical overflow */
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none; /* Hides scrollbar */
+        padding-bottom: 1em;
+        padding-left: 10vw;
+        justify-content: flex-start;
+        white-space: nowrap; /* Ensures horizontal scrolling */
+    }
+
+    .card-container::-webkit-scrollbar {
+        display: none; /* Hides scrollbar for WebKit browsers */
+    }
+
+    .card {
+        flex: 0 0 80%;
+        max-width: 400px;
+        scroll-snap-align: center;
+        margin-right: 1em;
+    }
+
+    .card:last-child {
+        margin-right: 10%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .card {
+        flex: 0 0 90%;
+        max-width: 350px;
+        padding: 1.2em;
+    }
+}
+
+#example-cards {
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+#example-cards .card {
+    background: var(--secondary-bg);
+    width: 380px;
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr;
+    position: relative;
+    overflow: visible;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    padding-bottom: 1.5em;
+}
+
+#example-cards .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color);
+    z-index: 1;
+}
+
+#example-cards .card:hover {
+    transform: translateY(-0.75em);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+#example-cards .card h3 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    color: var(--accent-color);
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    border-bottom: 1px solid var(--light-bg);
+    padding: 0.8em 1em;
+}
+
+#example-cards .card p {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    color: var(--text-color);
+    opacity: 0.9;
+    padding: 0.8em 1em;
+}
+
+#example-cards .card img {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    width: 100%;
+    max-height: 100%;
+    padding: 1em;
+    object-fit: contain;
+    border-radius: 4px;
+    align-self: center;
+}
+
+#example-cards .card ul {
+    list-style: none;
+    grid-row: 3/4;
+    grid-column: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 1em;
+}
+
+#example-cards .card ul li {
+    text-align: start;
+    padding-left: 1.5em;
+    margin-bottom: 0.8em;
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    line-height: 1.4;
+    position: relative;
+}
+
+#example-cards .card ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 0.8em;
+    height: 0.8em;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-color);
+}
+
+@media (max-width: 1024px) {
+    #example-cards {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        padding-bottom: 2em;
+        padding-left: 10vw;
+    }
+
+    #example-cards .card {
+        flex: 0 0 80%;
+        max-width: 400px;
+        scroll-snap-align: center;
+        margin-right: 1.5em;
+        min-height: 420px;
+    }
+}
+
+@media (max-width: 600px) {
+    #example-cards .card {
+        flex: 0 0 90%;
+        max-width: 350px;
+        min-height: 500px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        padding-bottom: 1.5em;
+    }
+}
