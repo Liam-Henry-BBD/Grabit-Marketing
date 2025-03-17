@@ -21,6 +21,7 @@
 #name-inputs {
     width: 100%;
     place-content: center;
+    list-style: none;
 }
 
 #name-inputs>label {
@@ -98,6 +99,12 @@
     border-radius: 10px;
 }
 
+.form>ul,
+.form>ul>li {
+    width: 100%;
+}
+
+
 .form label .input+em {
     color: rgba(255, 255, 255, 0.5);
     position: absolute;
@@ -108,6 +115,7 @@
     transition: 0.3s ease;
 }
 
+
 .form label .input:placeholder-shown+em {
     top: 12.5px;
     font-size: 0.9em;
@@ -116,7 +124,15 @@
 .form label .input:focus+em,
 .form label .input:valid+em {
     color: var(--accent-color);
-    top: 0px;
+    top: 0;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.form>ul>li>label .input:focus+em,
+.form>ul>li>label .input:valid+em {
+    color: var(--accent-color);
+    top: -1rem;
     font-size: 0.7em;
     font-weight: 600;
 }
