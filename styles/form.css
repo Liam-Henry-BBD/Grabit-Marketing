@@ -98,7 +98,7 @@
     border-radius: 10px;
 }
 
-.form label .input+p {
+.form label .input+em {
     color: rgba(255, 255, 255, 0.5);
     position: absolute;
     left: 10px;
@@ -108,13 +108,13 @@
     transition: 0.3s ease;
 }
 
-.form label .input:placeholder-shown+p {
+.form label .input:placeholder-shown+em {
     top: 12.5px;
     font-size: 0.9em;
 }
 
-.form label .input:focus+p,
-.form label .input:valid+p {
+.form label .input:focus+em,
+.form label .input:valid+em {
     color: var(--accent-color);
     top: 0px;
     font-size: 0.7em;

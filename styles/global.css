@@ -76,6 +76,7 @@ h2 {
     gap: 1rem;
     max-width: 60%;
 }
+
 #greeting+img {
     max-height: 80%;
     place-self: center;
@@ -86,10 +87,7 @@ h2 {
     place-self: center;
 }
 
-#cta-buttons {
-    display: flex;
-    justify-content: space-around;
-}
+
 
 .circle {
     display: flex;
@@ -105,21 +103,8 @@ h2 {
 }
 
 
-.bg-green {
-    background: rgb(29, 155, 29);
-}
-
-.bg-orange {
-    background: orange;
-}
-
-.bg-red {
-    background: red;
-}
-
-
-
 @media (max-width: 1024px) {
+
     #introduction {
         flex-direction: column;
     }
