@@ -64,7 +64,6 @@ h2 {
 }
 
 #introduction {
-    /* max-height: 100svh; */
     flex-direction: row;
     position: relative;
     background: linear-gradient(to bottom right, var(--accent-color) 20%, var(--bg-color) 60%);
